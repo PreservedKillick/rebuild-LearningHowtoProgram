@@ -7,12 +7,18 @@ class LessonsController < ApplicationController
 
   def new
     @lessons = Lesson.order(:number)
+    @lesson = Lesson.new
     render('lessons/new.html.erb')
   end
 
   def create
-    @lesson = Lesson.create(params[:lesson])
-    redirect_to("/lessons/#{@lesson.id}")
+    @lessons = Lesson.all
+    @lesson = Lesson.new(params[:lesson])
+    if @lesson.save
+      redirect_to("/lessons/#{@lesson.id}")
+    else
+      render('lessons/new.html.erb')
+    end
   end
 
   def show

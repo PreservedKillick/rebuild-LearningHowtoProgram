@@ -1,7 +1,14 @@
 <h2>Lesson <%= @lesson.name %></h2>
 
+<% if @lesson.section == nil %>
+  <p>This lesson has not been assigned to a section yet.</p>
+<% else %>
+  <h4>Section: <%= @lesson.section.title %></h4>
+<% end %>
+
 <h4>Text:</h4>
 <p><%= @lesson.text %></p>
+
 
 
 <% if @lesson.previous == nil %>
@@ -13,7 +20,7 @@
 <% if @lesson.next == nil %>
   <h5>This is the last lesson! Congratulations! Go get a job.</h5>
 <% else %>
-  <p><a href="/lessons">Next Lesson</a></p>
+  <p><a href="/lessons/<%= @lesson.next.id %>">Next Lesson</a></p>
 <% end %>
 
 

@@ -21,6 +21,12 @@
   <label for="lesson_number">Number</label>
   <input id="lesson_number" name="lesson[number]" type="integer" value="<%= @lesson.number%>">
   <br><br>
+  <select name="lesson[section_id]">
+    <% Section.all.each do |section| %>
+      <option value=<%= section.id %>><%= section.title %></option>
+    <% end %>
+  </select>
+  <br><br>
   <button>Update Lesson</button>
 </form>
 
