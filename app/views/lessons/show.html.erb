@@ -13,8 +13,15 @@
 <% if @lesson.next == nil %>
   <h5>This is the last lesson! Congratulations! Go get a job.</h5>
 <% else %>
-  <p><a href="/lessons/<%= @lesson.next.id %>">Next Lesson</a></p>
+  <p><a href="/lessons">Next Lesson</a></p>
 <% end %>
 
+
+<p><a href="/lessons/<%= @lesson.id %>"
+    data-confirm="Are you sure?"
+    data-method="delete"
+    rel="nofollow">Delete this lesson</a></p>
+<p><a href="/lessons/<%= @lesson.id %>/edit">Edit this lesson</a></p>
+<p><a href="/lessons">Return to the list of lessons</a></p>
 
 
