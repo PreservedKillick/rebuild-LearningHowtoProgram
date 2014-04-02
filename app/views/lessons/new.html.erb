@@ -1,0 +1,25 @@
+<h2>Create a New Lesson</h2>
+
+<%if @lessons.count == 0 %>
+    <p>No lessons have been added yet</p>
+<% else %>
+  <p>Current Lessons</p>
+  <ul>
+    <% @lessons.each do |lesson| %>
+      <li>number #<%= lesson.number %>:  <%= lesson.name %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<form action="/lessons" method="post">
+  <label for="lesson_name">Name</label>
+  <input id="lesson_name" name="lesson[name]" type="text">
+  <br><br>
+  <label for="lesson_text">Text</label>
+  <textarea id="lesson_text" name="lesson[text]" type="text" cols="40" rows="7"></textarea>
+  <br><br>
+  <label for="lesson_number">Number</label>
+  <input id="lesson_number" name="lesson[number]" type="integer">
+  <br><br>
+  <button>Create Lesson</button>
+</form>

@@ -1,0 +1,11 @@
+<h2>Angela and Anne's Lessons</h2>
+
+<ul>
+  <%if @lessons.count == 0 %>
+    <li>No lesson available!</li>
+  <% else %>
+    <% @lessons.each do |lesson| %>
+      <li><a href="/lessons/<%= lesson.id %>"><%= lesson.name %></a></li>
+    <% end %>
+  <% end %>
+</ul>

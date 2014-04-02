@@ -1,0 +1,20 @@
+<h2>Lesson <%= @lesson.name %></h2>
+
+<h4>Text:</h4>
+<p><%= @lesson.text %></p>
+
+
+<% if @lesson.previous == nil %>
+  <h5>This is the first lesson; there is no going back!</h5>
+<% else %>
+  <p><a href="/lessons/<%= @lesson.previous.id %>">Previous Lesson</a></p>
+<% end %>
+
+<% if @lesson.next == nil %>
+  <h5>This is the last lesson! Congratulations! Go get a job.</h5>
+<% else %>
+  <p><a href="/lessons/<%= @lesson.next.id %>">Next Lesson</a></p>
+<% end %>
+
+
+

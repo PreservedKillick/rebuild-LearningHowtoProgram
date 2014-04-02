@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Learnhowtoprogram</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<h1>Learn How to Program with Anne and Angela</h1>
+<%= yield %>
+
+
+
+<%= debug(params) %>
+
+</body>
+</html>
